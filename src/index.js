@@ -11,7 +11,7 @@ import 'bootstrap'
 class App extends Component {
   render () {
     return (
-      <Provider>
+      <Provider store={store}>
         <div className="container">
           <HeaderRow />
           <ManagePanel />
@@ -22,6 +22,11 @@ class App extends Component {
   }
 }
 
+store.subscribe(() => {
+  console.log('subscribe', store.getState());
+})
+
+store.dispatch({type: 'ADD_INCOME', transaction: 'Second transaction'})
 export default App
 
 ReactDOM.render(<App />, document.getElementById('app'));

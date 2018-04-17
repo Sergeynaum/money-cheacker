@@ -1,22 +1,25 @@
 import { createStore } from 'redux'
+import AppReducer from '../reducers/'
+import AppInitialState from '../../config/AppInitialState'
 
-const moneyListState = []
+
+const moneyListState = AppInitialState.transactions
+ 
+
 function moneyList(state = moneyListState, action) {
     if(action.type === 'ADD_INCOME') {
-        return [
+        console.log('aaaaction', action);
+        
+        return {
             ...state,
-            action.transaction
-        ]
+            ...action.transactions
+        }
     }
     return state
 } 
 
-const store = createStore(moneyList)
+const store = createStore(moneyList, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-store.subscribe(() => {
-    console.log('subscribe', store.getState());
-    
-})
+store.dispatch({type: 'ADD_INCOME', transactions: 'first'})
 
-
-store.dispatch({type: 'ADD_INCOME', transaction: 'first'})
+export default store
