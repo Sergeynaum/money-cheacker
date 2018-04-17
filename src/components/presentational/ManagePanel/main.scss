@@ -1,0 +1,42 @@
+.manage-panel {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background: #FDFEFC;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    .col-4 {
+        align-self: center;
+        .btn {
+            padding-top: 15px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 60px;
+            box-shadow: 0px 0px 5px 0px black;
+            svg {
+                vertical-align: baseline !important;
+            }
+        }
+        .btn-success {
+            &:hover {
+                color: #28a745;
+                background-color: #fff;
+            }
+        }
+        .btn-danger {
+            &:hover {
+                color: #dc3545;
+                background-color: #fff;
+            }
+        }
+    }
+    .circle {
+        border-radius: 50%;
+        border: 3px solid #86F6A9;
+        
+        box-shadow: 0px 0px 5px 0px black;
+        background: #D8FAD1;
+    }
+}
