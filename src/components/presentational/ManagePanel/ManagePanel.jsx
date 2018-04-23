@@ -7,11 +7,20 @@ import FaMinusCircle from 'react-icons/lib/fa/minus-circle'
 import './main.scss'
 
 class HeaderRow extends Component {
+
+    goToAddIncome = (e) => {
+        e.preventDefault()
+    }
+    
+    goToOutncome = (e) => {
+        e.preventDefault()
+    }
+
     render () {
         return (
             <div className="row manage-panel">
                <div className="col-4">
-                    <button className="btn btn-danger btn-lg"><FaMinusCircle /></button>
+                    <button onClick={this.goToAddIncome} className="btn btn-danger btn-lg"><FaMinusCircle /></button>
                 </div>
                 <div className="col-4 circle">
                     <div className="now-month">Now Month</div>
@@ -19,7 +28,7 @@ class HeaderRow extends Component {
                     <div className="now-month">Total outcome:</div>
                 </div>
                 <div className="col-4">
-                    <button className="btn btn-success btn-lg"><FaPlusCircle /></button>
+                    <button onClick={this.goToOutIncome} className="btn btn-success btn-lg"><FaPlusCircle /></button>
                 </div>
             </div>
         )

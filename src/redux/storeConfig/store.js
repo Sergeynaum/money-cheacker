@@ -32,7 +32,6 @@ if (!statusLocal) {
     })
     let storeData = store.getState()
     saveState({categories: storeData.categories})
-    
 }
 
 export default store
